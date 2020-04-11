@@ -1,0 +1,40 @@
+@import '../../assets//styles/variables.scss';
+
+.weather__container {
+    border: 3px solid #acacac;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 24px 32px;
+    max-width: 720px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 27px;
+}
+
+h1 {
+    color: $txt-color;
+    font-family: $font-family;
+    font-size: $txt-bigger-size;
+    font-weight: $font-normal-weight;
+    line-height: $line-height;
+    letter-spacing: 0.14px;
+    margin: 0;
+}
+
+p {
+    color: $txt-color;
+    font-family: $font-family;
+    font-size: $txt-normal-size;
+    font-weight: $font-normal-weight;
+    line-height: $line-height;
+    letter-spacing: 0.08px;
+    margin: 0;
+}
+
+.weather__info {
+    margin-bottom: 32px;
+}

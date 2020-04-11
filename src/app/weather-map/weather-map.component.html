@@ -1,0 +1,24 @@
+<section class="weather__container" *ngIf="(weatherUI$ | async) as weatherUI">
+    <header>
+        <h1>Current weather data - {{ weatherUI.city_name }}</h1>
+        <app-city-select (emitChosenCity)="changeCity($event)"></app-city-select>
+    </header>
+    <div class="weather__info">
+        <p>{{ weatherUI.weather_main }}</p>
+        <p>{{ weatherUI.weather_desc }}</p>
+    </div>
+    <div>
+        <img src="http://openweathermap.org/img/wn/{{weatherUI.icon}}@2x.png">
+    </div>
+    <div>
+        <p>temp: {{ weatherUI.temp }} &#8451;</p>
+        <p>pressure: {{ weatherUI.pressure }}</p>
+        <p>humidity: {{ weatherUI.humidity }}</p>
+        <p>temp_min - temp_max: {{ weatherUI.temp_min_max }} &#8451;</p>
+        <p>wind:speed: {{ weatherUI.wind_speed }}</p>
+        <p>wind:deg: {{ weatherUI.wind_deg }}</p>
+        <p>clouds:all: {{ weatherUI.clouds }}</p>
+        <p>sunrise: {{ weatherUI.sunrise }}</p>
+        <p>sunset: {{ weatherUI.sunset }}</p>
+    </div>
+</section>
