@@ -14,16 +14,15 @@ export class WeatherService {
     }
 
     createWeatherUIData(data: WeatherMap): WeatherUI {
-
         return {
             city_name: data.name,
             weather_main: data.weather && data.weather.length > 0 && data.weather[0].main  ? data.weather[0].main : '',
             weather_desc: data.weather && data.weather.length > 0 && data.weather[0].description  ? data.weather[0].description : '',
             temp: data.main.temp ? this.convertKelvinToCelsius(data.main.temp) : '',
-            presure: data.main.pressure ? `${data.main.pressure} hPa` : '',
+            pressure: data.main.pressure ? `${data.main.pressure} hPa` : '',
             humidity: data.main.humidity ? `${data.main.humidity} %` : '',
             wind_speed: data.wind.speed ? `${data.wind.speed} m/s` : '',
-            temp_min_max: 
+            temp_min_max:
                 data.main.temp_max && data.main.temp_min ?
                 `${this.convertKelvinToCelsius(data.main.temp_min)} - ${this.convertKelvinToCelsius(data.main.temp_max)}` :
                 '',

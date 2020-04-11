@@ -3,7 +3,7 @@ export interface WeatherUI {
     weather_main: string;
     weather_desc: string;
     temp: string;
-    presure: string;
+    pressure: string;
     humidity: string;
     wind_speed: string;
     temp_min_max: string;

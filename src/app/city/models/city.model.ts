@@ -6,5 +6,5 @@ export interface City {
     coord: {
       lon: number;
       lat: number;
-    }
+    };
 }
