@@ -12,4 +12,6 @@ export interface WeatherUI {
     sunrise: string;
     sunset: string;
     icon: string;
+    lat: number;
+    lon: number;
 }

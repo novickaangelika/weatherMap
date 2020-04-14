@@ -30,7 +30,9 @@ export class WeatherService {
             clouds: data.clouds.all ? `${data.clouds.all} %` : '',
             sunrise: data.sys.sunrise ? this.getTime(data.sys.sunrise) : '',
             sunset: data.sys.sunset ? this.getTime(data.sys.sunset) : '',
-            icon: data.weather && data.weather.length > 0 && data.weather[0].icon ? data.weather[0].icon.toString() : ''
+            icon: data.weather && data.weather.length > 0 && data.weather[0].icon ? data.weather[0].icon.toString() : '',
+            lat: data.coord ? data.coord.lat : null,
+            lon: data.coord ? data.coord.lon : null
         };
     }
 

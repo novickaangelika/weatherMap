@@ -7,6 +7,10 @@
     padding: 24px 32px;
     max-width: 720px;
 }
+.weather__info__container {
+    display: flex;
+    align-items: center;
+}
 
 header {
     display: flex;
@@ -36,5 +40,27 @@ p {
 }
 
 .weather__info {
-    margin-bottom: 32px;
+    margin-right: 32px;
+}
+
+.weather__details__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 100px;
+    margin-bottom: 24px;
+
+}
+
+.weather__details {
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+agm-map {
+    height: 300px;
 }

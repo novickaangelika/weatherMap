@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { City } from '../models/city.model';
-import { CityService } from '../services/city.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { City } from '../models/city.model';
+import { CityService } from '../services/city.service';
 
 @Component({
   selector: 'app-city-select',
@@ -11,17 +12,14 @@ import { map } from 'rxjs/operators';
 export class CitySelectComponent implements OnInit {
   @Output() emitChosenCity = new EventEmitter<number>();
   cities$: Observable<City[]>;
+  cityId: number;
 
   constructor(
     private cityService: CityService) {}
 
   ngOnInit() {
-    // todo slice array
-    this.cities$ = this.cityService.getCityData(`city.list.json`).pipe(
-      map(cities => {
-        cities.slice(1);
-        return cities;
-      })
+    this.cities$ = this.cityService.getCityData('city.list.json').pipe(
+      map(cities => Object.values(cities.slice(0, 10)))
     );
   }
 

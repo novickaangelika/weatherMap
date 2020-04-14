@@ -3,22 +3,70 @@
         <h1>Current weather data - {{ weatherUI.city_name }}</h1>
         <app-city-select (emitChosenCity)="changeCity($event)"></app-city-select>
     </header>
-    <div class="weather__info">
-        <p>{{ weatherUI.weather_main }}</p>
-        <p>{{ weatherUI.weather_desc }}</p>
-    </div>
-    <div>
+    <div class="weather__info__container">
+        <div class="weather__info">
+            <p>{{ weatherUI.weather_main }}</p>
+            <p>{{ weatherUI.weather_desc }}</p>
+        </div>
         <img src="http://openweathermap.org/img/wn/{{weatherUI.icon}}@2x.png">
     </div>
-    <div>
-        <p>temp: {{ weatherUI.temp }} &#8451;</p>
-        <p>pressure: {{ weatherUI.pressure }}</p>
-        <p>humidity: {{ weatherUI.humidity }}</p>
-        <p>temp_min - temp_max: {{ weatherUI.temp_min_max }} &#8451;</p>
-        <p>wind:speed: {{ weatherUI.wind_speed }}</p>
-        <p>wind:deg: {{ weatherUI.wind_deg }}</p>
-        <p>clouds:all: {{ weatherUI.clouds }}</p>
-        <p>sunrise: {{ weatherUI.sunrise }}</p>
-        <p>sunset: {{ weatherUI.sunset }}</p>
+    <div class="weather__details__container">
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#celsius"></use>
+            </svg>
+            <p>{{ weatherUI.temp }} &#8451;</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#pressure"></use>
+            </svg>
+            <p>{{ weatherUI.pressure }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#humidity"></use>
+            </svg>
+            <p>{{ weatherUI.humidity }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#temp"></use>
+            </svg>
+            <p>{{ weatherUI.temp_min_max }} &#8451;</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#windSpead"></use>
+            </svg>
+            <p>{{ weatherUI.wind_speed }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#windDeg"></use>
+            </svg>
+            <p>{{ weatherUI.wind_deg }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#clouds"></use>
+            </svg>
+            <p>{{ weatherUI.clouds }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#sunrise"></use>
+            </svg>
+            <p>{{ weatherUI.sunrise }}</p>
+        </div>
+        <div class="weather__details">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <use xlink:href="./../../assets/icons/svg-sprite.svg#sunset"></use>
+            </svg>
+            <p>{{ weatherUI.sunset }}</p>
+        </div>
     </div>
+    <agm-map [latitude]="weatherUI.lat" [zoom]="zoom" [longitude]="weatherUI.lon">
+        <agm-marker  [latitude]="weatherUI.lat" [longitude]="weatherUI.lon"></agm-marker>
+    </agm-map>
 </section>
