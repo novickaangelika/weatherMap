@@ -14,7 +14,6 @@ import { WeatherMapModule } from './weather-map/weather-map.module';
     HttpClientModule,
     WeatherMapModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
